@@ -42,6 +42,7 @@ public class userService {
        // Debug: Check incoming data
 
     try {
+        System.out.println("email"+user.getEmail());
         User user1 = userRepo.findByemail(user.getEmail()); // Fetch user from DB
         System.out.println("Database Response: " + user1); // Debug: Check if DB returns user
 
