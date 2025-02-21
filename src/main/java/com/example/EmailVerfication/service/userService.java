@@ -40,7 +40,7 @@ public class userService {
     }
     public String  LoginUser(User user){
         User user1=userRepo.findByemail(user.getEmail());
-        System.out.print("user",user)
+        System.out.print("user"+user)
         if (user1==null){
             return "not found";
         }
