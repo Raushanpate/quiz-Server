@@ -48,6 +48,7 @@ public class userService {
 
         if (user1 == null) {
             System.out.println("User not found!");
+              System.out.println("Returning not found response"); 
             return "not found";
         }
 
