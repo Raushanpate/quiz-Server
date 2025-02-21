@@ -54,7 +54,7 @@ public class Registrationcontroller {
 
     @PostMapping("/LoginUser")
     public  String LoginUser(@RequestBody User user){
-        System.out.println("heloom"+user);
+        System.out.println("heloom"+user.getEmail());
         return userService.LoginUser(user);
 
     }
