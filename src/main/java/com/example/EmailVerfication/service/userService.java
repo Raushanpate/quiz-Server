@@ -39,18 +39,26 @@ public class userService {
         return userRepo.findAll();
     }
     public String  LoginUser(User user){
-        User user1=userRepo.findByemail(user.getEmail());
-        System.out.print("user     "+user);
-        if (user1==null){
+       // Debug: Check incoming data
+
+    try {
+        User user1 = userRepo.findByemail(user.getEmail()); // Fetch user from DB
+        System.out.println("Database Response: " + user1); // Debug: Check if DB returns user
+
+        if (user1 == null) {
+            System.out.println("User not found!");
             return "not found";
         }
-       else {
-            if (user1.getPwrd().equals(user.getPwrd())){
-                return "Login succesfull "+" "+user1.getFullName();
-            }
-            else {
-                return "Incorrect Password";
-            }
+
+        if (user1.getPwrd().equals(user.getPwrd())) {
+            System.out.println("Login successful! User: " + user1.getFullName());
+            return "Login succesfull " + user1.getFullName();
+        } else {
+            System.out.println("Incorrect Password for user: " + user1.getEmail());
+            return "Incorrect Password";
         }
+    } catch (Exception e) {
+        e.printStackTrace(); // Print full error
+        return "Server Error";
     }
 }
