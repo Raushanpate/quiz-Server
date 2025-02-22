@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "https://123raushan.github.io")
+@CrossOrigin(origins = "*")
 @RequestMapping("/apiEmail")
 public class Registrationcontroller {
 
