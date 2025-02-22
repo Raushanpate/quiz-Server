@@ -55,15 +55,15 @@ public class Registrationcontroller {
     //LoginUser
 
     @PostMapping("/LoginUser")
-    public  ResponseEntity<String> LoginUser(@RequestParam("email") String email, @RequestParam("pwrd") String password){
+    public String LoginUser(@RequestParam("email") String email, @RequestParam("pwrd") String password){
         User user1=new User();
         user1.setEmail(email);
         user1.setPwrd(password);
         System.out.println("heloom"+user1.getEmail());
         System.out.println("RETURNING "+userService.LoginUser(user1));
-        String r=userService.LoginUser(user1);
-        System.out.println("r"+r);
-         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Login Failed! Invalid credentials.");
+        //String r=;
+        //System.out.println("r"+r);
+        return userService.LoginUser(user1);
         
         
         
