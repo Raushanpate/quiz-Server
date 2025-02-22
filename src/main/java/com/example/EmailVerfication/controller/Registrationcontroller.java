@@ -60,7 +60,7 @@ public class Registrationcontroller {
         System.out.println("heloom"+user1.getEmail());
         System.out.println("RETURNING "+userService.LoginUser(user1));
         
-        return userService.LoginUser(user);
+        return userService.LoginUser(user1);
 
     }
 }
