@@ -53,13 +53,13 @@ public class Registrationcontroller {
     //LoginUser
 
     @PostMapping("/LoginUser")
-    public  String LoginUser(@RequestBody User user){
-        System.out.println("heloom"+user.getEmail());
-        System.out.println("RETURNING "+userService.LoginUser(user));
-          HttpHeaders headers = new HttpHeaders();
-    headers.set("Access-Control-Allow-Origin", "*");  
-    headers.set("Access-Control-Allow-Methods", "POST");  
-    headers.set("Access-Control-Allow-Headers", "Content-Type");
+    public  String LoginUser(@RequestParam("email") String email, @RequestParam("pwrd") String password){
+        User user1=new User();
+        user1.setEmail(email);
+        user1.setPwrd(password);
+        System.out.println("heloom"+user1.getEmail());
+        System.out.println("RETURNING "+userService.LoginUser(user1));
+        
         return userService.LoginUser(user);
 
     }
