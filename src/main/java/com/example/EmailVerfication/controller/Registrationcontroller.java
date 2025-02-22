@@ -56,6 +56,10 @@ public class Registrationcontroller {
     public  String LoginUser(@RequestBody User user){
         System.out.println("heloom"+user.getEmail());
         System.out.println("RETURNING "+userService.LoginUser(user));
+          HttpHeaders headers = new HttpHeaders();
+    headers.set("Access-Control-Allow-Origin", "*");  
+    headers.set("Access-Control-Allow-Methods", "POST");  
+    headers.set("Access-Control-Allow-Headers", "Content-Type");
         return userService.LoginUser(user);
 
     }
