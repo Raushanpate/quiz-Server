@@ -61,6 +61,7 @@ public class Registrationcontroller {
         user1.setPwrd(password);
         System.out.println("heloom"+user1.getEmail());
         System.out.println("RETURNING "+userService.LoginUser(user1));
+        String r=userService.LoginUser(user);
         System.out.println("r"+r);
          return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Login Failed! Invalid credentials.");
         
